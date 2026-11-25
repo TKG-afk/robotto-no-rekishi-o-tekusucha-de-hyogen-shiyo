@@ -100,6 +100,9 @@ const observe = `${heading("写真から制作へ", "現実のリファレンス
   </div>
   <div class="observe-notes"><p>鉄の赤サビは素材を確認。角は接触、隙間は堆積を考える。</p><p>ススや苔は、付着範囲と表面の凹凸まで見る。</p></div>`;
 
+const photosPerPurpose = 5;
+const minimumReferencePhotos = referencePurposes.length * photosPerPurpose;
+
 const task = `${heading("制作課題", "自分のロボットの歴史を考えよう！")}
   <p class="lead">5つの設定から1つ選び、共通モデルのテクスチャを制作する。</p>
   <div class="assignment-grid">
@@ -109,12 +112,24 @@ const task = `${heading("制作課題", "自分のロボットの歴史を考え
     </div>
     <div class="assignment-refs">
       <h3>実写リファレンスを集める</h3>
-      <p class="quantity"><strong>25</strong><span>枚以上</span></p>
+      <p class="quantity"><strong>${minimumReferencePhotos}</strong><span>枚以上</span></p>
       <p>写真ごとに、参考にする部位と質感をメモする。</p>
       <div class="example"><span>観察メモの例</span><p>雨が流れたボルトの下に、<br>細いサビの筋を入れる。</p></div>
     </div>
   </div>
   <p class="closing">ロボットの歴史が見えるテクスチャを制作しよう！</p>`;
+
+const references = `${heading("制作課題｜写真の収集条件", "実写リファレンスを集める")}
+  <div class="reference-grid">
+    <div class="reference-total">
+      <p class="reference-count-label">必要な写真の合計</p>
+      <p class="quantity"><strong>${minimumReferencePhotos}</strong><span>枚以上</span></p>
+      <p class="reference-rule">目的ごとに<br><strong>${photosPerPurpose}枚ずつ</strong>集める！</p>
+    </div>
+    <ol class="reference-purposes">
+      ${referencePurposes.map(([title, detail]) => `<li><div><h3>${title}</h3><p>${detail}</p></div><span>${photosPerPurpose}枚</span></li>`).join("")}
+    </ol>
+  </div>`;
 
 const slides = [
   ["cover", cover],
@@ -122,7 +137,8 @@ const slides = [
   ...cases.map((item, index) => ["case", caseSlide(item, index)]),
   ["compare", compare],
   ["observe", observe],
-  ["task", task]
+  ["task", task],
+  ["references", references]
 ];
 
 deck.innerHTML = slides.map(([type, content], index) => `<section class="slide ${type}" aria-label="${index + 1}枚目" ${index ? "hidden" : ""}>${content}</section>`).join("");
@@ -225,4 +241,5 @@ deck.addEventListener("touchend", event => {
 deck.addEventListener("touchcancel", () => { touchStart = undefined; }, { passive: true });
 
 progress.max = count;
+move(0);
 fit();

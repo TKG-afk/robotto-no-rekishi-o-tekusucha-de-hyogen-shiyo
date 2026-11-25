@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ロボットの歴史を、テクスチャで表現しよう！</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
   <script defer src="photos.js"></script>
-  <script defer src="lesson.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="lesson.js?v=2"></script>
+  <script defer src="app.js?v=2"></script>
 </head>
 <body>
   <main id="viewport" aria-label="Substance 3D Painter 授業スライド">
@@ -18,12 +18,12 @@
       </header>
       <div id="slides"></div>
       <footer class="toolbar">
-        <progress id="progress" max="10" value="1" aria-label="スライドの進行状況"></progress>
+        <progress id="progress" aria-label="スライドの進行状況"></progress>
         <div class="toolbar-row">
           <a href="credits.html" target="_blank" rel="noopener">写真クレジット <span aria-hidden="true">↗</span></a>
           <nav aria-label="スライド操作">
             <button type="button" id="prev">← 前へ</button>
-            <output id="counter" aria-live="polite">01 / 10</output>
+            <output id="counter" aria-live="polite"></output>
             <button type="button" id="next">次へ →</button>
           </nav>
           <button type="button" id="fullscreen">全画面 <kbd>F</kbd></button>

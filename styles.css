@@ -187,6 +187,29 @@ thead th { background: var(--blue-dark); color: white; }
 .example span { display: block; color: var(--orange); font-weight: 700; font-size: 21px; margin-bottom: 4px; }
 .closing { margin-top: 27px; padding: 24px 30px; background: var(--blue-dark); color: white; border-radius: 12px; font-size: 51px; text-align: center; font-weight: 800; letter-spacing: -.035em; }
 
+.reference-grid { display: grid; grid-template-columns: 475px 1fr; gap: 28px; margin-top: 29px; }
+.reference-total {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 38px; background: var(--soft-orange); border-radius: 15px; color: var(--orange);
+}
+.reference-count-label { font-size: 30px; font-weight: 750; }
+.reference-total .quantity strong { font-size: 150px; }
+.reference-total .quantity span { font-size: 39px; }
+.reference-rule { border-top: 1px solid #dfbaa0; margin-top: 24px; padding-top: 23px; font-size: 36px; line-height: 1.4; font-weight: 700; }
+.reference-purposes { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: purpose; }
+.reference-purposes li {
+  display: grid; grid-template-columns: 55px 1fr auto; align-items: center; gap: 16px;
+  min-height: 131px; padding: 12px 24px; background: var(--soft-blue); border-radius: 12px;
+}
+.reference-purposes li::before {
+  counter-increment: purpose; content: counter(purpose);
+  display: grid; place-items: center; width: 49px; height: 49px;
+  background: var(--blue); color: white; border-radius: 50%; font-size: 30px; font-weight: 800;
+}
+.reference-purposes h3 { color: var(--blue-dark); font-size: 36px; line-height: 1.2; }
+.reference-purposes p { margin-top: 7px; color: var(--muted); font-size: 30px; line-height: 1.3; }
+.reference-purposes li > span { color: var(--blue-dark); font-size: 33px; font-weight: 800; white-space: nowrap; }
+
 #photo-dialog {
   position: fixed; inset: 0; margin: auto; width: min(86vw, 1590px); height: min(90vh, 960px);
   max-width: none; max-height: none; background: white; color: #172536;
