@@ -109,7 +109,7 @@ const task = `${heading("制作課題", "自分のロボットの歴史を考え
     </div>
     <div class="assignment-refs">
       <h3>実写リファレンスを集める</h3>
-      <p class="quantity"><strong>5</strong><span>枚以上</span></p>
+      <p class="quantity"><strong>25</strong><span>枚以上</span></p>
       <p>写真ごとに、参考にする部位と質感をメモする。</p>
       <div class="example"><span>観察メモの例</span><p>雨が流れたボルトの下に、<br>細いサビの筋を入れる。</p></div>
     </div>
