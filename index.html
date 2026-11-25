@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ロボットの歴史を、テクスチャで表現しよう！</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="photos.js"></script>
+  <script defer src="lesson.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main id="viewport" aria-label="Substance 3D Painter 授業スライド">
+    <div id="stage">
+      <header class="masthead">
+        <span class="course"><span class="brand-mark" aria-hidden="true"></span>Adobe Substance 3D Painter</span>
+        <span>専門学校国際理工カレッジ　ゲームクリエイター科1年生</span>
+      </header>
+      <div id="slides"></div>
+      <footer class="toolbar">
+        <progress id="progress" max="10" value="1" aria-label="スライドの進行状況"></progress>
+        <div class="toolbar-row">
+          <a href="credits.html" target="_blank" rel="noopener">写真クレジット <span aria-hidden="true">↗</span></a>
+          <nav aria-label="スライド操作">
+            <button type="button" id="prev">← 前へ</button>
+            <output id="counter" aria-live="polite">01 / 10</output>
+            <button type="button" id="next">次へ →</button>
+          </nav>
+          <button type="button" id="fullscreen">全画面 <kbd>F</kbd></button>
+        </div>
+      </footer>
+      <dialog id="photo-dialog" aria-labelledby="photo-title">
+        <form method="dialog"><button type="submit" autofocus>写真を閉じる <kbd>Esc</kbd></button></form>
+        <figure id="photo-preview"></figure>
+      </dialog>
+    </div>
+  </main>
+</body>
+</html>
